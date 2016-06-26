@@ -1,0 +1,14 @@
+nodes:
+  a:
+    type: rss
+    config: http://rss.cnn.com/rss/cnn_topstories.rss
+  b:
+    type: regex
+    config: (?i)why
+  c:
+    type: succeeded
+
+wires:
+  a.out: b.in
+  b.match: c.in
+  c.new: success.in
